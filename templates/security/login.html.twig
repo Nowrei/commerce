@@ -3,6 +3,15 @@
 {% block title %}Connexion{% endblock %}
 
 {% block body %}
+<nav class="bg-red-700 h-16">
+  <div class="h-30 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex flex-shrink-0 items-center">
+          <img class="block h-16 w-auto lg:hidden" src="https://www.zupimages.net/up/23/08/nfxv.png" alt="Your Company" href="https://127.0.0.1:8000/">
+          <img class="hidden h-16 w-auto lg:block" src="https://www.zupimages.net/up/23/08/nfxv.png" alt="Your Company" href="https://127.0.0.1:8000/">
+        </div>
+  </div>
+</nav>
 <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -46,7 +55,7 @@
                     </div>
                 </div>
             </div>
-            <div class="hidden md:block md:w-1/2 rounded-r-lg" style="background: url('https://images.unsplash.com/photo-1515965885361-f1e0095517ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80'); background-size: cover; background-position: center center;"></div>
+            <div class="hidden md:block md:w-1/2 rounded-r-lg" style="background: url('https://img-4.linternaute.com/TE60YVVtnqg4Js8yinVISX0Vpfw=/fit-in/620x/smart/12f13ee85ddc47c1bdae1dd1659d7692/ccmcms-linternaute/41973182.jpg'); background-size: cover; background-position: center center;"></div>
         </div>
     </div>
 </div>
