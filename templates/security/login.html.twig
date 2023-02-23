@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Connexion{% endblock %}
 
 {% block body %}
 <form method="post">
@@ -14,30 +14,42 @@
         </div>
     {% else %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-
-    <input type="hidden" name="_csrf_token"
+<!-- component -->
+<div class="h-screen w-screen">
+    <div class="flex flex-col items-center flex-1 h-full justify-center px-4 sm:px-0">
+        <div class="flex rounded-lg shadow-lg w-full sm:w-3/4 lg:w-1/2 bg-white sm:mx-0" style="height: 500px">
+            <div class="flex flex-col w-full md:w-1/2 p-4">
+                <div class="flex flex-col flex-1 justify-center mb-8">
+                    <h1 class="text-4xl text-center font-thin">Welcome Back</h1>
+                    <div class="w-full mt-4">
+                        <form class="form-horizontal w-3/4 mx-auto" method="POST" action="#">
+                            <div class="flex flex-col mt-4">
+                                <input id="inputEmail" type="text" class="flex-grow h-8 px-2 border rounded border-grey-400" name="email" "{{ last_username }}" placeholder="Email">
+                            </div>
+                            <div class="flex flex-col mt-4">
+                                <input id="inputPassword" type="password" class="flex-grow h-8 px-2 rounded border border-grey-400" name="password" required placeholder="Password">
+                            </div>
+                            <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
     >
-
-    
-        {# Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html #}
-
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
+                            <div class="flex flex-col mt-8">
+                                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-semibold py-2 px-4 rounded">
+                                    Login
+                                </button>
+                            </div>
+                        </form>
+                        <div class="text-center mt-4">
+                            <a class="no-underline hover:underline text-blue-dark text-xs" href="">
+                                Forgot Your Password?
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:block md:w-1/2 rounded-r-lg" style="background: url('https://images.unsplash.com/photo-1515965885361-f1e0095517ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80'); background-size: cover; background-position: center center;"></div>
         </div>
-   
-
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
+    </div>
+</div>
 </form>
 {% endif %}
 {% endblock %}

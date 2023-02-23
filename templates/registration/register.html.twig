@@ -1,8 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Inscription{% endblock %}
 
 {% block body %}
+<nav class="bg-red-700 h-16">
+  <div class="h-30 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex flex-shrink-0 items-center">
+          <img class="block h-16 w-auto lg:hidden" src="https://www.zupimages.net/up/23/08/nfxv.png" alt="Your Company" href="https://127.0.0.1:8000/">
+          <img class="hidden h-16 w-auto lg:block" src="https://www.zupimages.net/up/23/08/nfxv.png" alt="Your Company" href="https://127.0.0.1:8000/">
+        </div>
+  </div>
+
+  
+</nav>
     <h1>Register</h1>
 
     {{ form_start(registrationForm) }}
