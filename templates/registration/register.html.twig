@@ -12,15 +12,47 @@
         </div>
   </div>
 </nav>
-    <h1>Register</h1>
+<div class="h-screen w-screen">
+    <div class="flex flex-col items-center flex-1 h-full justify-center px-4 sm:px-0">
+        <div class="flex rounded-lg shadow-lg w-full sm:w-3/4 lg:w-1/2 bg-white sm:mx-0" style="height: 500px">
+            <div class="flex flex-col w-full md:w-1/2 p-4">
+                <div class="flex flex-col flex-1 justify-center mb-8">
+                    <h1 class="text-4xl text-center font-thin">Créer un compte !</h1>
+                    <div class="w-full mt-4">
+						{{ form_start(registrationForm) }}
+							<div class="flex flex-col mt-4">
+								<label class="block mb-2 text-sm font-bold text-gray-700" for="email">
+									Email
+								</label>
+								{{ form_row(registrationForm.email) }}
+							</div>
+							<div class="flex flex-col mt-4">
+								<div class="mb-4">
+									<label class="block mb-2 text-sm font-bold text-gray-700" for="password">
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+                  {{ form_row(registrationForm.plainPassword, {
+                  label: 'Mot de passe'
+                  }) }}
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+								</div>
+							</div>
+                  {{ form_row(registrationForm.agreeTerms, {
+                  label: 'Agree Term'
+                  }) }}
+            <div class="flex flex-col mt-8">
+            <button type="submit" class="bg-red-700 hover:bg-red-500 text-white text-sm font-semibold py-2 px-4 rounded" >S'inscrire</button>
+            </div>
+						{{ form_end(registrationForm) }}
+                            <div class="text-center mt-4">
+                            <a class="no-underline hover:underline text-blue-dark text-xs" href="https://127.0.0.1:8000/login">
+                                Déjà inscrit? Connectez-vous.
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:block md:w-1/2 rounded-r-lg" style="background: url('https://img-4.linternaute.com/TE60YVVtnqg4Js8yinVISX0Vpfw=/fit-in/620x/smart/12f13ee85ddc47c1bdae1dd1659d7692/ccmcms-linternaute/41973182.jpg'); background-size: cover; background-position: center center;"></div>
+        </div>
+    </div>
+</div>
 {% endblock %}
