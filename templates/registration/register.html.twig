@@ -12,6 +12,11 @@
         </div>
   </div>
 </nav>
+    {% if app.user %}
+        <div class="mb-3">
+            Vous ête déjà connecté {{ app.user.userIdentifier }}, <a href="{{ path('homepage') }}">Retour à l'accueil</a>
+        </div>
+    {% else %}
 <div class="h-screen w-screen">
     <div class="flex flex-col items-center flex-1 h-full justify-center px-4 sm:px-0">
         <div class="flex rounded-lg shadow-lg w-full sm:w-3/4 lg:w-1/2 bg-white sm:mx-0" style="height: 500px">
@@ -37,7 +42,7 @@
 								</div>
 							</div>
                   {{ form_row(registrationForm.agreeTerms, {
-                  label: 'Agree Term'
+                  label: 'Condition utilisateur'
                   }) }}
             <div class="flex flex-col mt-8">
             <button type="submit" class="bg-red-700 hover:bg-red-500 text-white text-sm font-semibold py-2 px-4 rounded" >S'inscrire</button>
@@ -55,4 +60,5 @@
         </div>
     </div>
 </div>
+{% endif %}
 {% endblock %}

@@ -19,17 +19,17 @@
 
     {% if app.user %}
         <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+            Vous ête déjà connecté {{ app.user.userIdentifier }}, <a href="{{ path('homepage') }}">Retour à l'accueil</a>
         </div>
     {% else %}
 
-<!-- component -->
+<!-- component -->  
 <div class="h-screen w-screen">
     <div class="flex flex-col items-center flex-1 h-full justify-center px-4 sm:px-0">
         <div class="flex rounded-lg shadow-lg w-full sm:w-3/4 lg:w-1/2 bg-white sm:mx-0" style="height: 500px">
             <div class="flex flex-col w-full md:w-1/2 p-4">
                 <div class="flex flex-col flex-1 justify-center mb-8">
-                    <h1 class="text-4xl text-center font-thin">Welcome Back</h1>
+                    <h1 class="text-4xl text-center font-thin">Connectez-vous</h1>
                     <div class="w-full mt-4">
                         <form class="form-horizontal w-3/4 mx-auto" method="POST" action="#">
                             <div class="flex flex-col mt-4">
